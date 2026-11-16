@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulador Redes Sociais</title>
+<style>
+body{font-family:Arial,sans-serif;background:#f0f2f5;text-align:center;padding:20px}
+.card{background:white;max-width:400px;margin:auto;padding:20px;border-radius:15px;box-shadow:0 2px 10px #ccc}
+input{width:90%;padding:12px;margin:10px 0;border-radius:8px;border:1px solid #ccc;font-size:16px}
+button{background:#1877f2;color:white;border:none;padding:12px 20px;border-radius:8px;font-size:16px;width:95%}
+#resultado{margin-top:20px;font-size:18px;font-weight:bold;color:#333}
+</style>
+</head>
+<body>
+<div class="card">
+<h1>📱 Simulador de Redes Sociais</h1>
+<p>Quantas horas por dia você passa nas redes?</p>
+<input type="number" id="horas" placeholder="Ex: 4">
+<button onclick="calcular()">Calcular</button>
+<div id="resultado"></div>
+</div>
+<script>
+function calcular(){
+let h = document.getElementById('horas').value;
+if(!h){document.getElementById('resultado').innerHTML='Digite um número!';return;}
+let porSemana = h*7;
+let porMes = h*30;
+let porAno = h*365;
+document.getElementById('resultado').innerHTML = 
+`Você passa <br> ${porSemana}h por semana <br> ${porMes}h por mês <br> ${porAno}h por ano <br><br> 😱 É muito tempo!`;
+}
+</script>
+</body>
+</html>
